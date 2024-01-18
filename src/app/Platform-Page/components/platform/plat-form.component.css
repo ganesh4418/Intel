@@ -1,0 +1,360 @@
+/* @font-face {
+    font-family: "Gotham HTF";
+    src: url("/assets/fonts/GothamHTF-Font/GothamHTF-Bold.otf") format("truetype");
+    font-weight: 700;
+
+} */
+
+@font-face {
+    font-family: "Gotham HTF";
+    src: url("src/assets/fonts/GothamHTF-Font/GothamHTF-Medium.otf") format("truetype");
+    font-weight: 600;
+
+}
+
+@font-face {
+    font-family: "Gotham HTF";
+    src: url("src/assets/fonts/GothamHTF-Font/GothamHTF-Light.otf") format("truetype");
+    font-weight: 300;
+
+}
+
+@font-face {
+    font-family: "Gotham HTF";
+    src: url("src/assets/fonts/GothamHTF-Font/GothamHTF-Light.otf") format("truetype");
+    font-weight: 400;
+
+}
+
+@font-face {
+    font-family: "Gotham HTF";
+    src: url("/assets/fonts/GothamHTF-Font/GothamHTF-.otf") format("truetype");
+    font-weight: 500;
+
+}
+
+.platform-middle-content {
+    color: white;
+}
+
+.row {
+    margin: 0px 366px 0px 140px;
+
+
+}
+
+.img-fluid {
+    margin-left: 22%;
+    max-width: 100%;
+    height: auto;
+    width: 360px;
+}
+
+.hello-messege {
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 76px;
+    letter-spacing: 0.5px;
+}
+
+.welcome-hello {
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 76px;
+    letter-spacing: 0.5px;
+}
+
+.wellcome-paragraph {
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 18px;
+    font-style: normal;
+    /* font-weight: 400; */
+    font-weight: 300;
+    line-height: normal;
+}
+
+.customInsights {
+    color: #FFF;
+
+    /* Modal - T1 */
+    font-family: Gotham HTF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-bottom: 3px solid white;
+    width: fit-content;
+    padding: 8px 0px;
+}
+
+.customs-insights-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.button-container {
+    display: flex;
+    padding: 16px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.platformLanding-content {
+    margin-top: 11%;
+    margin-left: 5rem;
+
+
+}
+
+.cust-insights {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.industry-p {
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.opten-paragaraph {
+    display: flex;
+    padding: 8px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.button-markets {
+    display: inline-block;
+    padding: 16px 24px;
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding-left: 0px;
+}
+
+.industry-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 0px;
+}
+
+
+.market-insight li {
+    display: flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.60);
+}
+.market-insight li span:hover {
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+.button-marketss {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.market-paragaraph {
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    align-self: stretch;
+}
+
+.market-insight {
+    display: flex;
+    gap: 20px;
+    padding-left: 0px !important;
+}
+
+.market-insight li span {
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    font-family: Gotham HTF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    /* 150% */
+}
+.market-insight ul {
+    
+}
+
+.market-insight li:hover {
+    font-weight: 900;
+    border: 2px solid rgba(255, 255, 255, 0.60);
+
+
+}
+
+.focus {
+    border-radius: 100px;
+    background: #FFF;
+}
+
+.focus a {
+    color: #8E5BB7;
+    text-align: center;
+    font-family: Gotham HTF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+
+.button-markets li a :hover {
+    display: inline-flex;
+    height: 56px;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 100px;
+    border: 3px solid rgba(255, 255, 255, 0.60);
+    background: #A058A2;
+}
+
+.focus-text {
+    color: #8E5BB7 !important;
+    text-align: center;
+    font-family: Gotham HTF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.upload-img {
+    width: 366px;
+    height: 366px;
+    border-radius: 366px;
+    border: 1px solid #D4D4D4;
+    float: left;
+    margin-top: 5rem;
+}
+
+.profile-pick-upload {
+    width: 350px;
+    height: 350px;
+    border-radius: 188px;
+}
+.edit-icon-backbroundCircle{
+    margin-left: 9.5rem;
+    margin-top: -2rem;
+    padding-left: 0.5rem;
+    fill: #FAFAFA;
+    border-radius: 25px;
+    height: 2.5rem;
+    width: 3rem;
+    padding-top: 0.3rem; 
+}
+
+.profile-pick-icon {
+    margin-left: 10rem;
+    margin-top: -5rem;
+    padding-left: 0.5rem;
+    fill: #FAFAFA;
+    width: 2rem;
+    padding-top: 0.3rem;
+}
+
+/* .editCreate {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-top: -1.5rem;
+    padding-left: 0.5rem;
+    fill: #FAFAFA;
+    background-color: #FAFAFA;
+    border-radius: 25px;
+    height: 2.5rem;
+    width: 2.5rem;
+    padding-top: 0.3rem;
+} */
+
+.post-edit-create {
+    margin-top: 0.5rem !important;
+}
+
+/* .editIcon {
+    margin: 7px 9px;
+
+} */
+
+/* .edit-icon input[type="file"] {
+    display: none;
+}
+
+.editCreate input[type="file"] {
+    display: none;
+} */
+
+.upload-pic-background {
+    width: 350px;
+    height: 350px;
+    border-radius: 350px;
+    background: linear-gradient(180deg, rgba(225, 225, 225, 0.06) 0%, rgba(158, 158, 158, 0.09) 100%);
+    margin: 7px;
+
+}
+
+.edit-content {
+    width: 40px;
+    height: 40px;
+    fill: #FAFAFA;
+}
+
+.edit-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+}
+
+.img-upload {
+    cursor: pointer;
+}

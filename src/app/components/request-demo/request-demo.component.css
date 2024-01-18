@@ -1,0 +1,373 @@
+@font-face {
+  font-family: "Gotham HTF";
+  src: url("src/assets/fonts/GothamHTF-Font/GothamHTF-Medium.otf") format("truetype");
+  font-weight: 600;
+
+}
+
+@font-face {
+  font-family: "Gotham HTF";
+  src: url("src/assets/fonts/GothamHTF-Font/GothamHTF-Light.otf") format("truetype");
+  font-weight: 300;
+
+}
+
+@font-face {
+  font-family: "Gotham HTF";
+  src: url("/assets/fonts/GothamHTF-Font/GothamHTF-Regular.otf") format("truetype");
+  font-weight: 400;
+
+}
+
+@font-face {
+  font-family: "Gotham HTF";
+  src: url("/assets/fonts/GothamHTF-Font/GothamHTF-Medium.otf") format("truetype");
+  font-weight: 500;
+
+}
+
+.fi {
+  content: " ";
+}
+
+.middle-content {
+  display: flex;
+  width: 700px;
+  padding: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgb(140 140 140 / 4%) 0%, rgb(98 98 98 / 2%) 100%), rgb(217 217 217 / 8%);
+  /* background: linear-gradient(180deg, rgba(98, 98, 98, 0.00) 0%, rgba(98, 98, 98, 0.07) 100%), rgba(217, 217, 217, 0.30); */
+  background-blend-mode: overlay, soft-light;
+  backdrop-filter: blur(26.5px);
+  position: relative;
+}
+
+.middle-content-us {
+  padding: 0px 30px;
+}
+
+.request-demo-form label {
+  color: #FFF;
+  font-family: Gotham HTF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+
+.input_pad {
+  padding: 3px 0px;
+}
+
+.input {
+  font-size: 15px;
+  width: 620px;
+  border: none;
+  padding: 1em;
+  fill: none;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+
+  /* Input text box details */
+  font-family: Gotham HTF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+
+  /* 150% */
+
+}
+
+.input-country-flag {
+  margin-left: -39px;
+  padding-left: 10rem;
+}
+
+.log-enterbtn {
+  margin-top: 2rem;
+  display: flex;
+  /* width: 620px; */
+  padding: 16px 24px;
+  justify-content: center;
+  border-radius: 100px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.18) 5.73%, rgba(255, 255, 255, 0.33) 11.46%, rgba(255, 255, 255, 0.66) 17.71%, #DADADA 100%), linear-gradient(180deg, #F1EEEE 29.17%, rgba(255, 255, 255, 0.66) 80.21%, rgba(255, 255, 255, 0.33) 88.02%, rgba(255, 255, 255, 0.18) 96.35%, rgba(255, 255, 255, 0.00) 100%);
+
+}
+
+
+.enterbtn {
+  color: #1E1E1E;
+  text-align: center;
+  font-family: Gotham HTF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  border: none;
+  background: none;
+
+}
+
+.enterbtn:hover {
+  font-weight: 600;
+}
+
+.header-demotag {
+  color: #FFF;
+  font-family: Gotham HTF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.header-demo-tag {
+  color: #FFF;
+  font-family: Gotham HTF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
+}
+
+.input_pad input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.767);
+
+}
+
+.demo-div {
+  /* overflow: scroll; */
+  min-height: 100px;
+  height: 535px;
+}
+
+.disabled-input {
+  font-size: 15px;
+  width: 59px;
+  border: none;
+  padding: 1em;
+  fill: none;
+  background: transparent;
+  border: 1px solid white;
+  outline: none;
+  color: white;
+  box-shadow: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 53px;
+  margin-right: -4px;
+  border-right-style: none;
+
+}
+
+.enabled-textbox {
+
+  height: 53px;
+  font-size: 15px;
+  width: 565px;
+  border: none;
+  padding: 1em;
+  fill: none;
+  background: transparent;
+  border: 1px solid white;
+  /* border-radius: 10px; */
+  outline: none;
+  color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left-style: none;
+
+}
+
+.enabled-textbox:focus {
+  outline-offset: 0;
+  outline: none;
+}
+
+.drop-down-country {
+  float: left;
+  font-size: 15px;
+  /* width: 88px; */
+  border: none;
+  /* padding: 1em; */
+  fill: none;
+  background: transparent;
+  border: 1px solid white;
+  outline: none;
+  color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right-style: none;
+
+  width: 80px;
+  padding-left: 15px;
+  padding-right: 30px;
+  overflow: auto;
+  height: 10rem;
+}
+
+.drop-down select {
+  appearance: none;
+
+}
+
+.drop-down-country option {
+  background-color: #A882BB;
+  border: none;
+}
+
+.drop-down option:hover {
+  background-color: white !important
+}
+
+.mobileInput {
+  font-size: 15px;
+  width: 529px;
+  border: none;
+  padding: 1em;
+  fill: none;
+  background: transparent;
+  border: 1px solid white;
+  outline: none;
+  color: white;
+  border-left-style: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.text-center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+
+}
+
+.errors {
+  color: #ff4f4f;
+}
+
+.blurBackgroundOnModal {
+  -webkit-filter: blur(2px);
+}
+
+li {
+  list-style-type: none;
+  text-align: left;
+}
+
+.card {
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 30%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
+
+.countryflag {
+  padding-top: 1rem;
+  padding-left: 40px;
+  font-size: 20px;
+}
+
+.country-code {
+  margin-top: -34px;
+  color: #FFF;
+  font-family: Gotham HTF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.flag-dropdown {
+  position: relative;
+  overflow: scroll;
+  height: 37%;
+  width: fit-content;
+  border-collapse: collapse;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background-clip: padding-box;
+  border-radius: 0.25rem;
+  text-align: left;
+  list-style: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.18) 5.73%, rgba(255, 255, 255, 0.33) 11.46%, rgba(255, 255, 255, 0.66) 17.71%, #DADADA 100%), linear-gradient(180deg, #F1EEEE 29.17%, rgba(255, 255, 255, 0.66) 80.21%, rgba(255, 255, 255, 0.33) 88.02%, rgba(255, 255, 255, 0.18) 96.35%, rgba(255, 255, 255, 0.00) 100%);
+
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 0.25rem;
+  margin-top: -20%;
+  margin-left: 6%;
+}
+
+.country-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+  text-align: left;
+}
+
+.country-item:hover {
+  background-color: white;
+}
+
+.flag-dropdown-search {
+  position: sticky;
+}
+
+.inputCountrySearch {
+  width: 100%;
+  padding: 10px;
+  font-family: Gotham HTF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+
+}
+
+.inputCountrySearch[type="text"]::placeholder {
+  color: black;
+}
+
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #FFF;
+}
+.material-symbols-rounded {
+  color: white !important;
+
+}
+
+.drop-icon {
+  margin-left: 7rem;
+  margin-top: 21px;
+}

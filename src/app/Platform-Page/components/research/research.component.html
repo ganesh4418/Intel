@@ -1,0 +1,590 @@
+<div class="container">
+    <div class="research-container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="research-history">
+                    <label class="side-nav-label ">Research History</label>
+                    <div class="side-nav-scroll scrollbar-1" id="style-1" >
+                        <div class="trending-list force-overflow">
+                            <div class="Preview">
+                                <p>Today</p>
+                                <div class="listof-history">
+                                    <ul class="trending-scroll">
+                                        <li *ngFor="let research of researchHistory">
+                                            <div class="Trending-content">
+                                                <div class="trending-p">
+                                                    <a class="trendingAncher" href="javascript:void(0)"
+                                                        style=" margin-left: 1rem; margin-top: 0.5rem;"
+                                                        title="{{research.research_title}}"
+                                                        (click)="downloadResearchHistoryReport(research)">
+                                                        <div style=" overflow: auto;
+                                                            width:100%;
+                                                            overflow-x: hidden;">
+                                                            <a *ngIf="!research.displayFullText">{{research.research_title
+                                                                | slice:0:research.research_title.indexOf(' ',
+                                                                research.research_title.indexOf(' ') + 1)}}...</a>
+                                                            <a
+                                                                *ngIf="research.displayFullText">{{research.research_title}}</a>
+                                                        </div>
+                                                    </a>
+
+                                                    <!-- <div class="character-container">
+                                                        <div *ngIf="!showFull" class="short-text"
+                                                            (click)="toggleDisplay()"
+                                                            (click)="downloadResearchHistoryReport(research)">
+                                                            {{ research.research_title.slice(0, 30) }}...</div>
+                                                        <div *ngIf="showFull" class="full-text"
+                                                            (click)="toggleDisplay()"
+                                                            (click)="downloadResearchHistoryReport(research)">
+                                                            {{research.research_title}}</div>
+                                                    </div> -->
+                                                </div>
+                                                <span style="float: inline-end; margin-top: -1.5rem; margin-left: 1rem;"
+                                                    *ngIf="research.file_format == '.pptx'">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                        viewBox="0 0 36 36" fill="none" style="margin-top: 2.5rem;">
+                                                        <path
+                                                            d="M6 18C6 25.4557 12.0443 31.5 19.5 31.5C26.9557 31.5 33 25.4557 33 18H19.5H6Z"
+                                                            fill="#DC4C2C" />
+                                                        <path d="M19.5 4.5V18H33C33 10.5443 26.9557 4.5 19.5 4.5Z"
+                                                            fill="#F7A278" />
+                                                        <path d="M19.5 4.5C12.0443 4.5 6 10.5443 6 18H19.5V4.5Z"
+                                                            fill="#C06346" />
+                                                        <path
+                                                            d="M16.7393 25.5H4.26075C3.56475 25.5 3 24.9353 3 24.2393V11.7607C3 11.0647 3.56475 10.5 4.26075 10.5H16.7393C17.4353 10.5 18 11.0647 18 11.7607V24.2393C18 24.9353 17.4353 25.5 16.7393 25.5Z"
+                                                            fill="#9B341F" />
+                                                        <path
+                                                            d="M11.0048 14.2588H7.5V21.7588H9.018V19.118H10.725C12.132 19.118 13.2728 17.9773 13.2728 16.5703V16.5268C13.2728 15.2743 12.2573 14.2588 11.0048 14.2588ZM11.6775 16.7683C11.6775 17.4125 11.1547 17.9353 10.5105 17.9353H9.018V15.4415H10.5105C11.1547 15.4415 11.6775 15.9643 11.6775 16.6085V16.7683Z"
+                                                            fill="white" />
+
+                                                    </svg>
+                                                </span>
+
+                                                <span style="float: inline-end; margin-top: -1.5rem;"
+                                                    *ngIf="research.file_format == '.xlsx'">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                        viewBox="0 0 36 36" fill="none" style="margin-top: 2.5rem;">
+                                                        <path
+                                                            d="M21.75 4.5H11.808C11.0858 4.5 10.5 5.08575 10.5 5.808V11.2523H21.75V4.5Z"
+                                                            fill="#169154" />
+                                                        <path
+                                                            d="M10.5 24.7905V30.192C10.5 30.9143 11.0857 31.5 11.8073 31.5H21.75V24.7905H10.5Z"
+                                                            fill="#18482A" />
+                                                        <path d="M10.5 11.2524H21.75V18.0039H10.5V11.2524Z"
+                                                            fill="#0C8045" />
+                                                        <path d="M10.5 18.0039H21.75V24.7914H10.5V18.0039Z"
+                                                            fill="#17472A" />
+                                                        <path
+                                                            d="M31.692 4.5H21.75V11.2523H33V5.808C33 5.08575 32.4143 4.5 31.692 4.5Z"
+                                                            fill="#29C27F" />
+                                                        <path
+                                                            d="M21.75 24.7905V31.5H31.6927C32.4143 31.5 33 30.9143 33 30.1928V24.7913L21.75 24.7905Z"
+                                                            fill="#27663F" />
+                                                        <path d="M21.75 11.2524H33V18.0039H21.75V11.2524Z"
+                                                            fill="#19AC65" />
+                                                        <path d="M21.75 18.0039H33V24.7914H21.75V18.0039Z"
+                                                            fill="#129652" />
+                                                        <path
+                                                            d="M16.7393 25.5H4.26075C3.56475 25.5 3 24.9353 3 24.2393V11.7607C3 11.0647 3.56475 10.5 4.26075 10.5H16.7393C17.4353 10.5 18 11.0647 18 11.7607V24.2393C18 24.9353 17.4353 25.5 16.7393 25.5Z"
+                                                            fill="#0C7238" />
+                                                        <path
+                                                            d="M7.35528 14.25H9.14478L10.5968 17.0655L12.1313 14.25H13.803L11.4998 18L13.8555 21.75H12.0923L10.5098 18.8025L8.93403 21.75H7.14453L9.53928 17.9865L7.35528 14.25Z"
+                                                            fill="white" />
+                                                    </svg>
+                                                </span>
+                                                <span style="float: inline-end; margin-top: -1.5rem;"
+                                                    *ngIf="research.file_format == '.docx'">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                        viewBox="0 0 36 36" fill="none" style="margin-top: 2.5rem;">
+                                                        <path
+                                                            d="M31.692 4.5H11.808C11.0858 4.5 10.5 5.08575 10.5 5.808V11.2523H33V5.808C33 5.08575 32.4143 4.5 31.692 4.5Z"
+                                                            fill="#2D92D4" />
+                                                        <path
+                                                            d="M10.5 24.7905V30.192C10.5 30.9143 11.0857 31.5 11.8073 31.5H31.692C32.4143 31.5 33 30.9143 33 30.192V24.7905H10.5Z"
+                                                            fill="#2150A9" />
+                                                        <path d="M10.5 11.2524H33V18.0039H10.5V11.2524Z"
+                                                            fill="#2D83D4" />
+                                                        <path d="M10.5 18.0039H33V24.7914H10.5V18.0039Z"
+                                                            fill="#2E70C9" />
+                                                        <path
+                                                            d="M16.7393 25.5H4.26075C3.56475 25.5 3 24.9353 3 24.2393V11.7607C3 11.0647 3.56475 10.5 4.26075 10.5H16.7393C17.4353 10.5 18 11.0647 18 11.7607V24.2393C18 24.9353 17.4353 25.5 16.7393 25.5Z"
+                                                            fill="#00488D" />
+                                                        <path
+                                                            d="M13.8022 14.25L12.6427 19.698L11.358 14.25H9.71771L8.39246 19.8668L7.19771 14.25H5.73071L7.48871 21.75H9.25271L10.5375 15.9833L11.823 21.75H13.5112L15.2692 14.25H13.8022Z"
+                                                            fill="white" />
+                                                    </svg>
+                                                </span>
+                                                <span style="float: inline-end; margin-top: -1.5rem;"
+                                                    *ngIf="research.file_format == '.pdf'">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                        viewBox="0 0 36 36" fill="none" style="margin-top: 2.5rem;">
+                                                        <path
+                                                            d="M28.5 31.5H7.5C5.84325 31.5 4.5 30.1567 4.5 28.5V7.5C4.5 5.84325 5.84325 4.5 7.5 4.5H28.5C30.1567 4.5 31.5 5.84325 31.5 7.5V28.5C31.5 30.1567 30.1567 31.5 28.5 31.5Z"
+                                                            fill="#E53935" />
+                                                        <path
+                                                            d="M26.1308 20.0992C24.8618 18.7815 21.3953 19.3185 20.5658 19.416C19.3455 18.2445 18.5153 16.8285 18.2228 16.3403C18.6623 15.0225 18.9548 13.704 19.0035 12.2888C19.0035 11.0685 18.5153 9.75 17.1488 9.75C16.6605 9.75 16.221 10.0433 15.9773 10.4333C15.3915 11.4585 15.6353 13.509 16.563 15.6075C16.026 17.121 15.5378 18.585 14.1713 21.1725C12.7553 21.7582 9.77779 23.1255 9.53404 24.5895C9.43654 25.029 9.58279 25.4685 9.92479 25.8097C10.266 26.1037 10.7048 26.25 11.1443 26.25C12.9503 26.25 14.7075 23.76 15.9285 21.6615C16.9538 21.3195 18.5648 20.8313 20.1758 20.5387C22.0793 22.1985 23.739 22.4423 24.618 22.4423C25.7895 22.4423 26.229 21.954 26.3753 21.5145C26.619 21.027 26.4728 20.49 26.1308 20.0992ZM24.9105 20.9288C24.8618 21.2708 24.4223 21.612 23.6415 21.417C22.7138 21.1733 21.8843 20.7338 21.1515 20.148C21.786 20.0505 23.202 19.9043 24.2273 20.0992C24.618 20.1967 25.008 20.4405 24.9105 20.9288ZM16.758 10.8727C16.8555 10.7265 17.0018 10.629 17.1488 10.629C17.5883 10.629 17.6858 11.166 17.6858 11.6055C17.637 12.6307 17.442 13.656 17.1 14.6325C16.368 12.6788 16.5143 11.3122 16.758 10.8727ZM16.6605 20.343C17.0513 19.5623 17.5883 18.195 17.7833 17.6093C18.2228 18.3413 18.9548 19.2203 19.3455 19.611C19.3455 19.6598 17.832 19.953 16.6605 20.343ZM13.7805 22.296C12.6578 24.1508 11.4863 25.323 10.8518 25.323C10.7543 25.323 10.6568 25.2742 10.5585 25.2255C10.4123 25.128 10.3635 24.9818 10.4123 24.786C10.5585 24.102 11.8275 23.1743 13.7805 22.296Z"
+                                                            fill="white" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <button class="border-button"></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-container *ngIf="!getInsightsClicked">
+                <div class="col-md-7" [ngStyle]="{'width': trendingHeadlinesHide ? '71%' : ''}">
+                    <div class="researchAssistant">
+                        <div class="welcome-display">
+                            <p class="user-name" *ngIf="!editResearchClick">Hi {{ userData!.first_name | titlecase }}
+                                {{userData!.last_name |titlecase}} <br><span class="welcome-msg">Welcome to
+                                    Intellisense</span>
+                            </p>
+                            <br>
+                            <button class="get-insights-button" [disabled]="!form.valid"
+                                [ngStyle]="{'color': form.valid ? '' : '#a9a9a9'}" data-toggle="modal"
+                                data-target="#exampleModal" (click)="getInsights()">Get insights</button>
+                        </div>
+                        <p *ngIf="!editResearchClick" class="market-paragraph">What market insights are you looking
+                            for today?</p>
+                        <div *ngIf="editResearchClick" class="edit-response-header">
+                            <p *ngIf="editResearchClick" class="userReports">Research Parameters</p>
+                            <button class="after-edit-click" (click)="cancelClicked()"
+                                *ngIf="editResearchClick">Cancel</button>
+                        </div>
+                        <p *ngIf="editResearchClick " class="userReport-readys">Edit the filled details</p>
+                        <div class="side-nav-scrolls container" id="style-1">
+                            <div class="trending-lists container">
+                                <form [formGroup]="form">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-12 research-content">
+                                                    <label for="">Input your research goal</label><br>
+                                                    <div class="goal-textarea">
+                                                        <textarea name="" id="" cols="30" rows="2" #goalInput
+                                                            class="form-control display-transparent"
+                                                            formControlName="goal"
+                                                            placeholder="Summarise what insights would like me to gather for you."
+                                                            (keyup)="inputFieldWordCount('goal')">
+                                                    </textarea>
+                                                        <span class="characters-limit"
+                                                            *ngIf="goalWordsGiven > 0">maximum
+                                                            words
+                                                            {{goalWordsGiven}}/500</span>
+                                                    </div>
+                                                    <div
+                                                        *ngIf="researchForm.goal.invalid && (researchForm.goal.dirty || researchForm.goal.touched)">
+                                                        <div *ngIf="researchForm.goal.errors?.['maxWords']"
+                                                            class="alert  alert-danger">
+                                                            Maximum 500 words allowed.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 research-content">
+                                                    <label for=""> Specify your research objectives</label><br>
+                                                    <div class="goal-textarea">
+                                                        <textarea name="" id="" cols="30" rows="2" #researchInput
+                                                            class="form-control display-transparent"
+                                                            formControlName="objects"
+                                                            placeholder="What key question or problem are you aiming to address?"
+                                                            (keyup)="inputFieldWordCount('objects')">
+                                                    </textarea>
+                                                        <span class="characters-limit"
+                                                            *ngIf="researchWordsGiven > 0">maximum
+                                                            words
+                                                            {{researchWordsGiven}}/500</span>
+                                                    </div>
+                                                    <div
+                                                        *ngIf="researchForm.objects.invalid && (researchForm.objects.dirty || researchForm.objects.touched)">
+
+                                                        <div *ngIf="researchForm.objects.errors?.['maxWords']"
+                                                            class="alert  alert-danger">
+                                                            Maximum 500 words allowed.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 research-content">
+                                                    <label for=""> Specify research parameters</label><br>
+                                                    <div class="goal-textarea">
+                                                        <textarea name="" id="" cols="30" rows="2" #parameters
+                                                            class="form-control display-transparent"
+                                                            formControlName="parameters"
+                                                            placeholder="Do you have any specific boundaries you would like me to enforce?"
+                                                            (keyup)="inputFieldWordCount('parameters')">
+                                                            </textarea>
+                                                        <span class="characters-limit"
+                                                            *ngIf="parameterWordsGiven > 0">maximum
+                                                            words
+                                                            {{parameterWordsGiven}}/500</span>
+                                                    </div>
+                                                    <div
+                                                        *ngIf="researchForm.parameters.invalid && (researchForm.parameters.dirty || researchForm.parameters.touched)">
+                                                        <div *ngIf="researchForm.parameters.errors?.['maxWords']"
+                                                            class="alert  alert-danger">
+                                                            Maximum 500 words allowed.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="format-would">
+                                        <p class="format-would-p">What format would you like to see the results of the
+                                            research
+                                            in?
+                                        </p>
+                                        <div style="width: max-content;">
+                                            <label for="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                    viewBox="0 0 36 36" fill="none">
+                                                    <path
+                                                        d="M6 18C6 25.4557 12.0443 31.5 19.5 31.5C26.9557 31.5 33 25.4557 33 18H19.5H6Z"
+                                                        fill="#DC4C2C" />
+                                                    <path d="M19.5 4.5V18H33C33 10.5443 26.9557 4.5 19.5 4.5Z"
+                                                        fill="#F7A278" />
+                                                    <path d="M19.5 4.5C12.0443 4.5 6 10.5443 6 18H19.5V4.5Z"
+                                                        fill="#C06346" />
+                                                    <path
+                                                        d="M16.7393 25.5H4.26075C3.56475 25.5 3 24.9353 3 24.2393V11.7607C3 11.0647 3.56475 10.5 4.26075 10.5H16.7393C17.4353 10.5 18 11.0647 18 11.7607V24.2393C18 24.9353 17.4353 25.5 16.7393 25.5Z"
+                                                        fill="#9B341F" />
+                                                    <path
+                                                        d="M11.0048 14.2588H7.5V21.7588H9.018V19.118H10.725C12.132 19.118 13.2728 17.9773 13.2728 16.5703V16.5268C13.2728 15.2743 12.2573 14.2588 11.0048 14.2588ZM11.6775 16.7683C11.6775 17.4125 11.1547 17.9353 10.5105 17.9353H9.018V15.4415H10.5105C11.1547 15.4415 11.6775 15.9643 11.6775 16.6085V16.7683Z"
+                                                        fill="white" />
+
+                                                </svg>
+                                                <div style="margin-top: 6px;
+                                            float: right;">
+                                                    <input class="radio-button" type="radio" value="pptx"
+                                                        formControlName="uploadedFileFormat">
+                                                </div>
+
+                                            </label>
+
+                                            <!-- <label for="" class="optionGroupLable downlod-formate">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                    viewBox="0 0 36 36" fill="none">
+                                                    <path
+                                                        d="M21.75 4.5H11.808C11.0858 4.5 10.5 5.08575 10.5 5.808V11.2523H21.75V4.5Z"
+                                                        fill="#169154" />
+                                                    <path
+                                                        d="M10.5 24.7905V30.192C10.5 30.9143 11.0857 31.5 11.8073 31.5H21.75V24.7905H10.5Z"
+                                                        fill="#18482A" />
+                                                    <path d="M10.5 11.2524H21.75V18.0039H10.5V11.2524Z"
+                                                        fill="#0C8045" />
+                                                    <path d="M10.5 18.0039H21.75V24.7914H10.5V18.0039Z"
+                                                        fill="#17472A" />
+                                                    <path
+                                                        d="M31.692 4.5H21.75V11.2523H33V5.808C33 5.08575 32.4143 4.5 31.692 4.5Z"
+                                                        fill="#29C27F" />
+                                                    <path
+                                                        d="M21.75 24.7905V31.5H31.6927C32.4143 31.5 33 30.9143 33 30.1928V24.7913L21.75 24.7905Z"
+                                                        fill="#27663F" />
+                                                    <path d="M21.75 11.2524H33V18.0039H21.75V11.2524Z" fill="#19AC65" />
+                                                    <path d="M21.75 18.0039H33V24.7914H21.75V18.0039Z" fill="#129652" />
+                                                    <path
+                                                        d="M16.7393 25.5H4.26075C3.56475 25.5 3 24.9353 3 24.2393V11.7607C3 11.0647 3.56475 10.5 4.26075 10.5H16.7393C17.4353 10.5 18 11.0647 18 11.7607V24.2393C18 24.9353 17.4353 25.5 16.7393 25.5Z"
+                                                        fill="#0C7238" />
+                                                    <path
+                                                        d="M7.35528 14.25H9.14478L10.5968 17.0655L12.1313 14.25H13.803L11.4998 18L13.8555 21.75H12.0923L10.5098 18.8025L8.93403 21.75H7.14453L9.53928 17.9865L7.35528 14.25Z"
+                                                        fill="white" />
+                                                </svg>
+                                                <div style="margin-top: 6px;
+                                            float: right;">
+                                                    <input type="radio" value="xlsx"
+                                                        formControlName="uploadedFileFormat">
+                                                </div>
+                                            </label> -->
+
+                                            <label for="" class="optionGroupLable">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                    viewBox="0 0 36 36" fill="none">
+                                                    <path
+                                                        d="M31.692 4.5H11.808C11.0858 4.5 10.5 5.08575 10.5 5.808V11.2523H33V5.808C33 5.08575 32.4143 4.5 31.692 4.5Z"
+                                                        fill="#2D92D4" />
+                                                    <path
+                                                        d="M10.5 24.7905V30.192C10.5 30.9143 11.0857 31.5 11.8073 31.5H31.692C32.4143 31.5 33 30.9143 33 30.192V24.7905H10.5Z"
+                                                        fill="#2150A9" />
+                                                    <path d="M10.5 11.2524H33V18.0039H10.5V11.2524Z" fill="#2D83D4" />
+                                                    <path d="M10.5 18.0039H33V24.7914H10.5V18.0039Z" fill="#2E70C9" />
+                                                    <path
+                                                        d="M16.7393 25.5H4.26075C3.56475 25.5 3 24.9353 3 24.2393V11.7607C3 11.0647 3.56475 10.5 4.26075 10.5H16.7393C17.4353 10.5 18 11.0647 18 11.7607V24.2393C18 24.9353 17.4353 25.5 16.7393 25.5Z"
+                                                        fill="#00488D" />
+                                                    <path
+                                                        d="M13.8022 14.25L12.6427 19.698L11.358 14.25H9.71771L8.39246 19.8668L7.19771 14.25H5.73071L7.48871 21.75H9.25271L10.5375 15.9833L11.823 21.75H13.5112L15.2692 14.25H13.8022Z"
+                                                        fill="white" />
+                                                </svg>
+                                                <div style="margin-top: 6px;
+                                            float: right;">
+                                                    <input type="radio" value="docx"
+                                                        formControlName="uploadedFileFormat">
+                                                </div>
+                                            </label>
+
+                                            <label for="" class="optionGroupLable" style="margin-left: -3rem;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                    viewBox="0 0 36 36" fill="none">
+                                                    <path
+                                                        d="M28.5 31.5H7.5C5.84325 31.5 4.5 30.1567 4.5 28.5V7.5C4.5 5.84325 5.84325 4.5 7.5 4.5H28.5C30.1567 4.5 31.5 5.84325 31.5 7.5V28.5C31.5 30.1567 30.1567 31.5 28.5 31.5Z"
+                                                        fill="#E53935" />
+                                                    <path
+                                                        d="M26.1308 20.0992C24.8618 18.7815 21.3953 19.3185 20.5658 19.416C19.3455 18.2445 18.5153 16.8285 18.2228 16.3403C18.6623 15.0225 18.9548 13.704 19.0035 12.2888C19.0035 11.0685 18.5153 9.75 17.1488 9.75C16.6605 9.75 16.221 10.0433 15.9773 10.4333C15.3915 11.4585 15.6353 13.509 16.563 15.6075C16.026 17.121 15.5378 18.585 14.1713 21.1725C12.7553 21.7582 9.77779 23.1255 9.53404 24.5895C9.43654 25.029 9.58279 25.4685 9.92479 25.8097C10.266 26.1037 10.7048 26.25 11.1443 26.25C12.9503 26.25 14.7075 23.76 15.9285 21.6615C16.9538 21.3195 18.5648 20.8313 20.1758 20.5387C22.0793 22.1985 23.739 22.4423 24.618 22.4423C25.7895 22.4423 26.229 21.954 26.3753 21.5145C26.619 21.027 26.4728 20.49 26.1308 20.0992ZM24.9105 20.9288C24.8618 21.2708 24.4223 21.612 23.6415 21.417C22.7138 21.1733 21.8843 20.7338 21.1515 20.148C21.786 20.0505 23.202 19.9043 24.2273 20.0992C24.618 20.1967 25.008 20.4405 24.9105 20.9288ZM16.758 10.8727C16.8555 10.7265 17.0018 10.629 17.1488 10.629C17.5883 10.629 17.6858 11.166 17.6858 11.6055C17.637 12.6307 17.442 13.656 17.1 14.6325C16.368 12.6788 16.5143 11.3122 16.758 10.8727ZM16.6605 20.343C17.0513 19.5623 17.5883 18.195 17.7833 17.6093C18.2228 18.3413 18.9548 19.2203 19.3455 19.611C19.3455 19.6598 17.832 19.953 16.6605 20.343ZM13.7805 22.296C12.6578 24.1508 11.4863 25.323 10.8518 25.323C10.7543 25.323 10.6568 25.2742 10.5585 25.2255C10.4123 25.128 10.3635 24.9818 10.4123 24.786C10.5585 24.102 11.8275 23.1743 13.7805 22.296Z"
+                                                        fill="white" />
+                                                </svg>
+                                                <div style="margin-top: 6px;
+                                            float: right; width: 20px; height: 20px;">
+                                                    <input type="radio" value="pdf"
+                                                        formControlName="uploadedFileFormat">
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="upload-fileContent">
+                                            <p>You can upload any type of file to provide better context for me below.
+                                            </p>
+                                            <div class="file-upload">
+                                                <label> Upload file
+                                                    <input class="upload-file-input" type="file" size="60"
+                                                        (change)="moreInsightsUpload($event)"
+                                                        formControlName="uploadFile">
+                                                </label>
+                                                <p class="uploadfile-list"><span
+                                                        class="fileUploadNameDisplay">{{fileName |
+                                                        slice:0:25}}</span>
+                                                    <img *ngIf="fileName !== ''" class="close-button"
+                                                        src="assets/Chevron.png" alt="" (click)="removeFile()">
+                                                </p>
+                                            </div>
+                                            <button type="button" class="fullscreen"
+                                                (click)="trendingHeadlineDisplay()">
+                                                <span *ngIf="!trendingHeadlinesHide">Full Screen</span>
+                                                <span *ngIf="trendingHeadlinesHide">Exit Full Screen</span>
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" *ngIf="!trendingHeadlinesHide">
+                                                    <g clip-path="url(#clip0_2316_4504)">
+                                                        <path
+                                                            d="M7 14H5V19H10V17H7V14ZM5 10H7V7H10V5H5V10ZM17 17H14V19H19V14H17V17ZM14 5V7H17V10H19V5H14Z"
+                                                            fill="white" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_2316_4504">
+                                                            <rect width="24" height="24" fill="white" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" *ngIf="trendingHeadlinesHide">
+                                                    <g clip-path="url(#clip0_3192_9678)">
+                                                        <path
+                                                            d="M5 16H8V19H10V14H5V16ZM8 8H5V10H10V5H8V8ZM14 19H16V16H19V14H14V19ZM16 8V5H14V10H19V8H16Z"
+                                                            fill="white" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_3192_9678">
+                                                            <rect width="24" height="24" fill="white" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="getInsightsClicked">
+                <div class="col-md-7" [ngStyle]="{'width': trendingHeadlinesHide ? '71%' : ''}">
+                    <div class="researchAssistant">
+                        <div class="welcome-display">
+                            <p class="userReport">Research Parameters</p>
+                            <button class="get-insights-button"
+                                (click)="downloadInsightsReport(getInsightsDownloadInput)">Download</button>
+                        </div>
+
+                        <div class="row" style="width: -webkit-fill-available;">
+                            <div class="user-report-top">
+                                <p class="userReport-ready">Your report is ready!</p>
+                                <p class="userReport-content">
+                                    Below report is generated considering your research goal, objective,
+                                    parameters,
+                                    content of the uploaded file if any and the relevant information available
+                                    on the
+                                    internet. If you are not satisfied with the report, you can regenerate it or
+                                    give
+                                    some additional inputs to further enhance the result.
+                                </p>
+                            </div>
+
+                            <div class="repor-content">
+                                <div>
+                                    <a href="javascript:void(0)" class="preview-check" href="">Preview</a><br>
+                                    <img src="assets/reports-img/Rectangle.png" alt="" style="width: 146.429px;
+                                    height: 200px;">
+                                </div>
+                                <div class="report-content-review">
+                                    <div style="text-align: end;">
+                                        <span style="padding: 0px 12px;">
+                                            <svg class="edit-repot" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="17" viewBox="0 0 16 17" fill="none">
+                                                <g clip-path="url(#clip0_3511_24731)">
+                                                    <path
+                                                        d="M2 12.1397V14.1664C2 14.353 2.14667 14.4997 2.33333 14.4997H4.36C4.44667 14.4997 4.53333 14.4664 4.59333 14.3997L11.8733 7.12638L9.37333 4.62638L2.1 11.8997C2.03333 11.9664 2 12.0464 2 12.1397ZM13.8067 5.19305C14.0667 4.93305 14.0667 4.51305 13.8067 4.25305L12.2467 2.69305C11.9867 2.43305 11.5667 2.43305 11.3067 2.69305L10.0867 3.91305L12.5867 6.41305L13.8067 5.19305Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_3511_24731">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <a href="javascript:void(0)" class="preview-check"
+                                                (click)="editResearchClicked()">Edit</a>
+                                        </span>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17"
+                                                viewBox="0 0 16 17" fill="none">
+                                                <g clip-path="url(#clip0_3511_24734)">
+                                                    <path
+                                                        d="M11.7668 4.73365C10.6802 3.64699 9.14018 3.02032 7.44684 3.19365C5.00018 3.44032 2.98684 5.42699 2.71351 7.87365C2.34684 11.107 4.84684 13.8337 8.00018 13.8337C10.1268 13.8337 11.9535 12.587 12.8068 10.7937C13.0202 10.347 12.7002 9.83365 12.2068 9.83365C11.9602 9.83365 11.7268 9.96699 11.6202 10.187C10.8668 11.807 9.06018 12.8337 7.08684 12.3937C5.60684 12.067 4.41351 10.8603 4.10018 9.38032C3.54018 6.79365 5.50684 4.50032 8.00018 4.50032C9.10684 4.50032 10.0935 4.96032 10.8135 5.68699L9.80684 6.69365C9.38684 7.11365 9.68018 7.83365 10.2735 7.83365H12.6668C13.0335 7.83365 13.3335 7.53365 13.3335 7.16699V4.77365C13.3335 4.18032 12.6135 3.88032 12.1935 4.30032L11.7668 4.73365Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_3511_24734">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0 0.5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <a href="javascript:void(0)" class="preview-check"
+                                                (click)="regenerateInsights()">Regenerate</a>
+                                        </span>
+                                    </div>
+                                    <div class="report-content-display">
+                                        <div class="report-side-nav-scroll trending-scrolls" id="style-1">
+                                            <div class="force-overflow">
+                                                <div class="report-content-p">
+                                                    <span [innerText]="aiEngineResponse | newline"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sources">
+                                        Sources:
+                                        <!-- <span *ngFor="let source of sourcesResponses">
+                                            <img width="20" height="20" [src]="source" alt="{{source}}">
+                                           <a href="">{{source}}</a>
+                                        </span> -->
+                                        <!-- <ul class="list-group" *ngFor="let source of sourcesResponses">
+                                            <li class="list-group-item" style="background-color: transparent;
+                                            border: none;
+                                            color: white;"><a href=""
+                                            class="trendingAncher" href="{{source}}"
+                                            (click)="redirectUrl(source)" target="_blank"
+                                            title="{{source}}" style="margin-top: 1rem;">{{source}}</a></li>
+                                        </ul> -->
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 20px;">
+                                <span class="result-span">Would you like to further enhance the results or
+                                    obtain
+                                    additional insight?</span>
+                                <div class="row">
+                                    <div class="form-group  col-8 further-trend">
+                                        <input type="text" class="form-control insights-search-option"
+                                            [(ngModel)]="additionInput"
+                                            placeholder="Type additional input or ask me anything about the report">
+                                    </div>
+                                    <div class="bottom-insights-button">
+                                        <button class="after-edit-click" (click)="getInsightsAdiitional()">Get
+                                            insights</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="format-would">
+                            <div class="upload-fileContent">
+                                <button type="button" class="fullscreen" (click)="trendingHeadlineDisplay()">
+                                    <span *ngIf="!trendingHeadlinesHide">Full Screen</span>
+                                    <span *ngIf="trendingHeadlinesHide">Exit Full Screen</span>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" *ngIf="!trendingHeadlinesHide">
+                                        <g clip-path="url(#clip0_2316_4504)">
+                                            <path
+                                                d="M7 14H5V19H10V17H7V14ZM5 10H7V7H10V5H5V10ZM17 17H14V19H19V14H17V17ZM14 5V7H17V10H19V5H14Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2316_4504">
+                                                <rect width="24" height="24" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" *ngIf="trendingHeadlinesHide">
+                                        <g clip-path="url(#clip0_3192_9678)">
+                                            <path
+                                                d="M5 16H8V19H10V14H5V16ZM8 8H5V10H10V5H8V8ZM14 19H16V16H19V14H14V19ZM16 8V5H14V10H19V8H16Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_3192_9678">
+                                                <rect width="24" height="24" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="col-md-2" *ngIf="!trendingHeadlinesHide">
+                <div class="trending-headlines">
+                    <label class="side-nav-label">Trending headlines</label>
+
+                    <div class="side-nav-scroll scrollbar-1" id="style-1">
+                        <div class="trending-list force-overflow" target="_blank">
+                            <div class="tending-top">
+                                <ul class="trending-heading-scroll">
+                                    <li *ngFor="let headline of trendingHeadlineList" style="margin-top: 1rem;">
+                                        <div class="Trending-content trending-p tile-pointer"></div>
+                                        <a class="trendingAncher" href="{{headline.url}}"
+                                            (click)="redirectUrl($event, headline.url)" title="{{headline.title}}"
+                                            style="margin-top: 1rem;">{{headline.title |
+                                            slice:0:20}} ...
+                                            <img *ngIf="headline.image_url" class="trending-video"
+                                                src="{{headline.image_url}}" alt="">
+                                        </a>
+                                        <button class="border-button"></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<app-research-response *ngIf="showModal" [modalTitle]="modalTitle" [modalBody]="modalBody"></app-research-response>

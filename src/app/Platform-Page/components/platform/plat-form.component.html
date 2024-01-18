@@ -1,0 +1,77 @@
+<div class="row platformLanding-content">
+    <div class="col-md-11">
+        <div class="welcomeMessage">
+            <p class="welcome-hello">Hello,
+                <span class="hello-messege"> {{ user!.first_name }} {{ user!.last_name }}</span>
+            </p>
+            <p class="wellcome-paragraph">Your profile settings have been aligned to your Microsoft preferences.
+                <br>
+                To personalise your insights experience please set your market preferences
+            </p>
+
+        </div>
+        <div class="cust-insights">
+            <div class="cust-insight">
+                <p class="customInsights">Customize insights</p>
+                <div class="button-markets">
+                    <p class="opten-paragaraph">What industry do you work in?</p>
+                    <ul class="market-insight">
+                        <li #esg (click)="industryClicked('esg', true)"><span>ESG</span></li>
+                        <li #finance (click)="industryClicked('finance', true)"><span>Finance</span></li>
+                        <li #healthcare (click)="industryClicked('healthcare', true)"><span>HealthCare</span></li>
+                        <li #technology (click)="industryClicked('technology', true)"><span>Technology</span></li>
+                    </ul>
+                </div>
+                <div class="button-marketss">
+                    <p class="market-paragaraph">How often would you like your market insights refreshed?</p>
+                    <ul class="market-insight">
+                        <li #daily (click)="marketInsightClicked('daily', true)"><span>Daily</span></li>
+                        <li #weekly (click)="marketInsightClicked('weekly', true)"><span>Weekly</span></li>
+                        <li #biweekly (click)="marketInsightClicked('biweekly', true)"><span>Biweekly</span></li>
+                        <li #monthly (click)="marketInsightClicked('monthly', true)"><span>Monthly</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-1">
+        <div class="upload-img">
+            <div class="upload-pic-background">
+                <img class="profile-pick-upload" *ngIf="imagePreview != null" [src]="imagePreview" alt="">
+
+                <svg xmlns="http://www.w3.org/2000/svg" *ngIf="imagePreview == null" style="margin: 5rem;" width="200"
+                    height="200" viewBox="0 0 20 20" fill="none">
+                    <g clip-path="url(#clip0_2316_4020)">
+                        <path
+                            d="M10.0001 1.6665C5.40008 1.6665 1.66675 5.39984 1.66675 9.99984C1.66675 14.5998 5.40008 18.3332 10.0001 18.3332C14.6001 18.3332 18.3334 14.5998 18.3334 9.99984C18.3334 5.39984 14.6001 1.6665 10.0001 1.6665ZM10.0001 4.1665C11.3834 4.1665 12.5001 5.28317 12.5001 6.6665C12.5001 8.04984 11.3834 9.1665 10.0001 9.1665C8.61675 9.1665 7.50008 8.04984 7.50008 6.6665C7.50008 5.28317 8.61675 4.1665 10.0001 4.1665ZM10.0001 15.9998C7.91675 15.9998 6.07508 14.9332 5.00008 13.3165C5.02508 11.6582 8.33342 10.7498 10.0001 10.7498C11.6584 10.7498 14.9751 11.6582 15.0001 13.3165C13.9251 14.9332 12.0834 15.9998 10.0001 15.9998Z"
+                            fill="white" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_2316_4020">
+                            <rect width="20" height="20" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                <div>
+                    <label class="img-upload">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41"
+                                fill="none" class="edit-icon-backbroundCircle">
+                                <circle cx="20" cy="20.5" r="20" fill="#FAFAFA" />
+                            </svg>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"
+                            (change)="profileUpload($event)" class="profile-pick-icon">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M19.06 4.08988L20.41 5.43988C21.2 6.21988 21.2 7.48988 20.41 8.26988L7.18 21.4999H3V17.3199L13.4 6.90988L16.23 4.08988C17.01 3.30988 18.28 3.30988 19.06 4.08988ZM5 19.4999L6.41 19.5599L16.23 9.72988L14.82 8.31988L5 18.1399V19.4999Z"
+                                fill="#8067DC" />
+                        </svg>
+                        <input #file type="file" size="60" accept="image/*" (change)="profileUpload(file)"
+                            style="display: contents;">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

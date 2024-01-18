@@ -1,0 +1,70 @@
+<!-- <div class="col-12 text-center-content">
+    <div class="middle-content" [ngClass]="{'blurBackgroundOnModal': showModal}">
+        <div class="demo-div">
+            <p class="header-demo-tag"><span class="header-demotag"> Sign up</span><br>
+                Fill out the below details and we will schedule a demo with you right away!</p>
+            <div class="request-demo-form">
+                <form [formGroup]="form">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <label class="form-label" for="firstName">First Name</label>
+                                <input type="text" id="firstName" formControlName="firstName"
+                                    class="form-control form-control-lg firstName" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <label class="form-label" for="lastName">Last Name</label>
+                                <input type="text" id="lastName" formControlName="lastName"
+                                    class="form-control form-control-lg firstName" autocomplete="off" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" input_pad">
+                        <label for=""> Business email</label><br>
+                        <input type="email" id="name" class="input" placeholder="fgh@mail.com" formControlName="email"
+                            autocomplete="off">
+                        <div *ngIf="f.email.errors">
+                            <div class="alert alert-danger" *ngIf="f.email.touched && f.email.errors?.['required']">Email is
+                                required</div>
+                            <div class="alert alert-danger" *ngIf="f.email.touched && f.email.errors?.['pattern']">
+                                {{emailPatternMsg}}</div>
+                        </div>
+                    </div>
+                    <div class="input_pad">
+                        <label for="">Contact number</label><br>
+                        <div class="drop-down">
+                            <select name="cars" class="drop-down-country">
+                                <option value="volvo">+91</option>
+                                <option value="saab">+44</option>
+                                <option value="opel">+27</option>
+                                <option value="opel">+62</option>
+                                <option value="opel">+98</option>
+                                <option value="opel">+39</option>
+                            </select>
+                        </div>
+                        <input type="text" class="mobileInput" (keypress)="checkOnlyNumbers($event)"
+                            placeholder='xxxxxxxxxx' maxlength="10" formControlName="number" autocomplete="off">
+                        <div *ngIf="f.number.errors" >
+                            <div class="alert alert-danger" *ngIf="f.number.touched && f.number.errors?.['required']">Number
+                                is required.</div>
+                            <div class="errors" *ngIf="f.number.touched && f.number.errors?.['minlength']">
+                                Number should be 10 characters
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="log-etr">
+                        <div class="log-enterbtn">
+                                <button type="button" class="enterbtn" (click)="shareDetail()">Share
+                                        details</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<response-dialog *ngIf="showModal" [modalTitle]="modalTitle" [modalBody]="modalBody"
+    (modalClose)="closeModal()"></response-dialog> -->

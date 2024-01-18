@@ -1,0 +1,304 @@
+@font-face {
+    font-family: "Gotham HTF";
+    src: url("src/assets/fonts/GothamHTF-Font/GothamHTF-Medium.otf") format("truetype");
+    font-weight: 600;
+  
+  }
+  
+  @font-face {
+    font-family: "Gotham HTF";
+    src: url("src/assets/fonts/GothamHTF-Font/GothamHTF-Light.otf") format("truetype");
+    font-weight: 300;
+  
+  }
+  
+  @font-face {
+    font-family: "Gotham HTF";
+    src: url("src/assets/fonts/GothamHTF-Font/GothamHTF-Light.otf") format("truetype");
+    font-weight: 400;
+  
+  }
+  
+  @font-face {
+    font-family: "Gotham HTF";
+    src: url("src/assets/fonts/GothamHTF-Font/GothamHTF-Medium.otf") format("truetype");
+    font-weight: 500;
+  
+  }
+  
+  .middle-content {
+    margin-top: 10rem;
+    display: flex;
+    width: 700px;
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 20px;
+    background: linear-gradient( 180deg, rgb(140 140 140 / 4%) 0%, rgb(98 98 98 / 2%) 100% ), rgb(217 217 217 / 8%);
+    /* background: linear-gradient(180deg, rgba(98, 98, 98, 0.00) 0%, rgba(98, 98, 98, 0.07) 100%), rgba(217, 217, 217, 0.30); */
+    background-blend-mode: overlay, soft-light;
+    backdrop-filter: blur(26.5px);
+    position: relative;
+  }
+  
+  .middle-content-us {
+    padding: 0px 30px;
+  }
+  
+  .request-demo-form label {
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 4px;
+  }
+  
+  .input_pad {
+    padding: 3px 0px;
+  }
+  
+  .input {
+    font-size: 15px;
+    width: 620px;
+    border: none;
+    padding: 1em;
+    fill: none;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    color: #FFF;
+
+/* Input text box details */
+font-family: Gotham HTF;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+  
+  }
+  
+  .name-reqired {
+    color: red;
+    padding: 7px 0px;
+  
+  }
+  
+  .log-enterbtn {
+    display: flex;
+    width: 620px;
+    padding: 16px 24px;
+    justify-content: center;
+    border-radius: 100px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.18) 5.73%, rgba(255, 255, 255, 0.33) 11.46%, rgba(255, 255, 255, 0.66) 17.71%, #DADADA 100%), linear-gradient(180deg, #F1EEEE 29.17%, rgba(255, 255, 255, 0.66) 80.21%, rgba(255, 255, 255, 0.33) 88.02%, rgba(255, 255, 255, 0.18) 96.35%, rgba(255, 255, 255, 0.00) 100%);
+  
+  }
+  
+  .log-etr {
+    padding: 24px 0px;
+  }
+  
+  .enterbtn {
+    color: #1E1E1E;
+    text-align: center;
+    font-family: Gotham HTF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    border: none;
+    background: none;  
+
+  }
+  
+  .enterbtn:hover{
+    font-weight: 600;
+  }
+  
+  .header-demotag {
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .header-demo-tag {
+    color: #FFF;
+    font-family: Gotham HTF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+  }
+  
+  .input_pad input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.767);
+  
+  }
+  
+  .demo-div {
+    overflow: scroll;
+    min-height: 100px;
+    height: 535px;
+  }
+  
+  .demo-div::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .log-etr :hover {
+    display: flex;
+    width: 620px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #1E1E1E;
+    text-align: center;
+    font-family: Gotham HTF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    /* 28px */
+  }
+  
+  .disabled-input {
+    font-size: 15px;
+    width: 59px;
+    border: none;
+    padding: 1em;
+    fill: none;
+    background: transparent;
+    border: 1px solid white;
+    outline: none;
+    color: white;
+    box-shadow: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 53px;
+    margin-right: -4px;
+    border-right-style: none;
+  
+  
+  
+  
+  }
+  
+  .enabled-textbox {
+  
+    height: 53px;
+    font-size: 15px;
+    width: 565px;
+    border: none;
+    padding: 1em;
+    fill: none;
+    background: transparent;
+    border: 1px solid white;
+    /* border-radius: 10px; */
+    outline: none;
+    color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left-style: none;
+  
+  }
+  
+  .enabled-textbox:focus {
+    outline-offset: 0;
+    outline: none;
+  }
+  .drop-down-country{
+   float: left;
+   font-size: 15px;
+   width: 88px;
+   border: none;
+   padding: 1em;
+   fill: none;
+   background: transparent;
+   border: 1px solid white;
+   outline: none;
+   color: white;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   border-right-style: none;
+  }
+  .drop-down select {
+   appearance: none;
+  
+  }
+  .drop-down-country option {
+   background-color: #A882BB;
+   border: none;
+  }
+  .drop-down option:hover{
+   background-color:white !important
+   
+  
+  }
+  .mobileInput{
+   font-size: 15px;
+   width: 529px;
+   border: none;
+   padding: 1em;
+   fill: none;
+   background: transparent;
+   border: 1px solid white;
+   /* border-radius: 10px; */
+   outline: none;
+   color: white;
+   border-left-style: none;
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+  }
+  
+  .text-center-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .errors{
+    color: #ff4f4f;
+  }
+  .sign-up-content{
+    margin-top: 10rem;
+  }
+  .firstName{
+    font-size: 15px;
+    border: none;
+    padding: 1em;
+    fill: none;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+  }
+
+  .demo-div {
+    overflow: scroll;
+    min-height: 100px;
+    height: 535px;
+  }
+  .demo-div::-webkit-scrollbar {
+    display: none;
+  }
+    
+  .blurBackgroundOnModal {
+    -webkit-filter: blur(2px);
+  }
+  .modal-dialog {
+    padding-top: 13rem;
+  }

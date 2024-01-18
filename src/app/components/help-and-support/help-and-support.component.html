@@ -1,0 +1,117 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center-content">
+            <div class="middle-content" [ngClass]="{'blurBackgroundOnModal': showModal}">
+                <div class="demo-div">
+                    <p class="header-demo-tag"><span class="header-demotag"> Help and Support </span><br>
+                        Fill out the below details and we will contact back.</p>
+                    <div class="log-cteare">
+                        <form [formGroup]="form">
+                            <div class=" input_pad">
+                                <label for="">Full name</label><br>
+                                <input type="text" id="name" class="input" placeholder="abc" formControlName="name"
+                                    autocomplete="off" required autocomplete="false">
+                                <div *ngIf="f.name.errors">
+                                    <div *ngIf="f.name.touched && f.name.errors?.['required']"
+                                        class="alert alert-danger">Name is required</div>
+                                    <div *ngIf="f.name.touched && f.name.errors?.['pattern']"
+                                        class="alert alert-danger">
+                                        <!-- {{fullNamePatternMsg}} -->
+                                        Name should have atleast 3 characters
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" input_pad">
+                                <label for=""> Company</label><br>
+                                <input type="text" id="company" class="input" placeholder="XYZ pvt ltd"
+                                    formControlName="company" autocomplete="off"  required autocomplete="false" appNoSpaceInInput>
+                                <div *ngIf="f.company.errors">
+                                    <div *ngIf="f.company.touched && f.company.errors?.['required']"
+                                        class="alert alert-danger">Company name is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" input_pad">
+                                <label for=""> Business email</label><br>
+                                <input type="email" id="name" class="input" placeholder="fgh@mail.com"
+                                    formControlName="email" autocomplete="off" required autocomplete="false">
+                                <div *ngIf="f.email.errors">
+                                    <div *ngIf="f.email.touched && f.email.errors?.['required']"
+                                        class="alert alert-danger"> Email is required
+                                    </div>
+                                    <div *ngIf="f.email.touched && f.email.errors?.['email']"
+                                        class="alert alert-danger">Email should have correct
+                                        format</div>
+                                    <div *ngIf="f.email.touched && f.email.errors?.['pattern']"
+                                        class="alert alert-danger">Please enter valid email id</div>
+                                </div>
+                            </div>
+                            <div class="input_pad">
+                                <label for="">Contact number</label><br>
+
+                                <div style="display: inline-flex;">
+                                    <div class="fi fi-{{countryFlagCode | lowercase}}"
+                                        style="font-size: 30px; left: 1rem; cursor: pointer;"
+                                        (click)="displayCountryList()"
+                                        (click)="$event.stopPropagation()">
+                                        
+                                        <div class="country-code">
+                                            <span
+                                                style="font-size: 20px; margin-left: 3rem; margin-top: 1rem; position: absolute;">
+                                                {{countryDialCode}}</span>
+                                        </div>
+        
+                                        <span class="material-symbols-rounded drop-icon">
+                                            expand_circle_down
+                                        </span>
+                                    </div>
+        
+                                    <input type="text" class="input input-country-flag" (keypress)="checkOnlyNumbers($event)"
+                                        placeholder='xxxxxxxxxx' minlength="{{countryContactMaxLength}}"
+                                        maxlength="{{countryContactMaxLength}}" formControlName="number" autocomplete="off"
+                                        required autocomplete="false">
+        
+                                </div>
+        
+                                <div class="flag-dropdown scroll-bar" style="height: 15rem; overflow: auto; width: 21rem;"
+                                    *ngIf="showCountryList">
+                                    <div class="flag-dropdown-search">
+                                        <input type="text" name="" id="" class="inputCountrySearch" placeholder="search country"
+                                            (keyup)="searchCountry($event.target)"
+                                            (click)="$event.stopPropagation()">
+        
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" class="search-icon">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M14.76 13.27L20.49 19L19 20.49L13.27 14.76C12.2 15.53 10.91 16 9.5 16C5.91 16 3 13.09 3 9.5C3 5.91 5.91 3 9.5 3C13.09 3 16 5.91 16 9.5C16 10.91 15.53 12.2 14.76 13.27ZM9.5 5C7.01 5 5 7.01 5 9.5C5 11.99 7.01 14 9.5 14C11.99 14 14 11.99 14 9.5C14 7.01 11.99 5 9.5 5Z"
+                                                    fill="black" />
+                                            </svg></span>
+                                    </div>
+        
+                                    <ul style="overflow: auto; height: 14rem; width: 20rem; padding-left: 1rem">
+                                        <li *ngFor="let country of countryListCopy" class="country-item"
+                                            (click)="selectedCountry(country)">
+                                            <span class="fi fi-{{country.code | lowercase}}" style="padding-left: 35px;"></span>
+                                            <span style="padding-left: 5px;">{{country.name}}</span>
+                                            <span style="padding-left: 5px;">{{country.dial_code}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="log-enterbtn">
+                                    <button type="button" [disabled]="!form.valid" class="enterbtn" (click)="shareDetail()">Share
+                                        details</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-loader [isLoading]="showLoader"></app-loader>
+<response-dialog *ngIf="showModal" [modalTitle]="modalTitle" [modalBody]="modalBody"
+    (modalClose)="closeModal()"></response-dialog>

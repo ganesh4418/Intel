@@ -1,0 +1,392 @@
+@font-face {
+  font-family: "Gotham HTF";
+  src: url("src//assets/fonts/GothamHTF-Font/GothamHTF-Bold.otf")
+    format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Gotham HTF";
+  src: url("src//assets/fonts/GothamHTF-Font/GothamHTF-Black.otf")
+    format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Gotham HTF";
+  src: url("src//assets/fonts/GothamHTF-Font/GothamHTF-Medium.otf")
+    format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Gotham HTF";
+  src: url("src//assets/fonts/GothamHTF-Font/GothamHTF-Light.otf")
+    format("truetype");
+  font-weight: 300;
+}
+
+.scrool-bar ::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.aboutus-width {
+  width: 1366px;
+  height: 768px;
+  flex-shrink: 0;
+}
+::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.about-imgs {
+  margin-left: 40rem;
+  height: 480px;
+  width: 820px;
+}
+
+.img-left {
+  height: 480px;
+  width: 820px;
+  border-radius: 20px 0px 0px 20px;
+  margin-right: -12%;
+}
+
+.img-right {
+  /* margin-left: 9rem; */
+  width: 419px;
+  height: 380px;
+}
+
+.img-lefts {
+  margin-left: 59%;
+  width: 419px;
+  height: 380px;
+}
+
+.create-real-left {
+  background: transparent;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(26.5px);
+  backdrop-filter: blur(26.5px);
+  position: relative;
+  margin-left: 27%;
+  margin-top: -25%;
+  display: flex;
+  width: 811px;
+  padding: 45px 43px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(
+      180deg,
+      rgba(98, 98, 98, 0) 0%,
+      rgba(98, 98, 98, 0.07) 100%
+    ),
+    rgba(217, 217, 217, 0.15);
+  background-blend-mode: overlay, color-dodge;
+}
+
+.reability-para {
+  background: transparent;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(26.5px);
+  backdrop-filter: blur(26.5px);
+  position: absolute;
+  margin-left: 9rem;
+  margin-top: 3rem;
+  display: flex;
+  width: 839px;
+  padding: 52px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(
+      180deg,
+      rgba(98, 98, 98, 0) 0%,
+      rgba(98, 98, 98, 0.07) 100%
+    ),
+    rgba(217, 217, 217, 0.15);
+  background-blend-mode: overlay, color-dodge;
+}
+.product-details-adject {
+  /* padding: 40px 40px; */
+  margin-bottom: 8%;
+}
+
+.reliability-para {
+  background: transparent;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(26.5px);
+  backdrop-filter: blur(26.5px);
+  position: relative;
+  margin-top: -26%;
+  display: flex;
+  width: 845px;
+  padding: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(
+      180deg,
+      rgba(98, 98, 98, 0) 0%,
+      rgba(98, 98, 98, 0.07) 100%
+    ),
+    rgba(217, 217, 217, 0.15);
+  background-blend-mode: overlay, color-dodge;
+}
+.on-demand-para {
+  background: transparent;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(26.5px);
+  backdrop-filter: blur(26.5px);
+  position: relative;
+  margin-top: -27%;
+  display: flex;
+  width: 845px;
+  padding: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(
+      180deg,
+      rgba(98, 98, 98, 0) 0%,
+      rgba(98, 98, 98, 0.07) 100%
+    ),
+    rgba(217, 217, 217, 0.15);
+  background-blend-mode: overlay, color-dodge;
+}
+
+.sys-login-group {
+  font-family: "Gotham HTF";
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.create-real-rightss {
+  background: transparent;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(26.5px);
+  backdrop-filter: blur(26.5px);
+  position: relative;
+  width: 56%;
+  padding: 29px 44px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(
+      180deg,
+      rgba(98, 98, 98, 0) 0%,
+      rgba(98, 98, 98, 0.07) 100%
+    ),
+    rgba(217, 217, 217, 0.15);
+  background-blend-mode: overlay, color-dodge;
+  margin-right: 43%;
+  margin-top: -32%;
+}
+
+.content-paragraph {
+  /* padding: 0px 20px; */
+  padding: 0px 9px;
+}
+
+.create-real-rights {
+  display: flex;
+  width: 839px;
+  padding: 56px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-left: -69rem;
+  margin-top: 4rem;
+  background: transparent;
+  display: flex;
+  width: 839px;
+  padding: 56px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 20px;
+  background: linear-gradient(
+      180deg,
+      rgba(98, 98, 98, 0) 0%,
+      rgba(98, 98, 98, 0.07) 100%
+    ),
+    rgba(217, 217, 217, 0.15);
+  background-blend-mode: overlay, color-dodge;
+  backdrop-filter: blur(26.5px);
+}
+
+.sys-paragraph {
+  color: #fff;
+  font-family: "Gotham HTF";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.sys-paragraphs {
+  color: #fff;
+  font-family: "Gotham HTF";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 36px;
+}
+
+.about-display {
+  display: inline-block;
+}
+
+.create-market {
+  color: #fff;
+  text-align: center;
+  font-family: "Gotham HTF";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  padding: 66px 0px;
+  margin-top: 60px;
+  margin-bottom: 68px;
+}
+
+.real-time {
+  color: #fff;
+  font-family: "Gotham HTF";
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.sys-login {
+  font-family: "Gotham HTF";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  clear: #ffffff;
+}
+
+.sys-paragra {
+  color: #fff;
+  font-family: "Gotham HTF";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  /* line-height: normal; */
+}
+.strategic-idea {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px; /* 163.636% */
+}
+.log-terms {
+  list-style-type: none;
+  left: 29%;
+  position: relative;
+  display: flex;
+  padding: 60px 0px;
+  align-items: center;
+  gap: 60px;
+}
+
+.log-terms li {
+  float: left;
+  text-align: center;
+}
+
+.log-terms ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.log-terms li a {
+  display: block;
+  text-align: center;
+  padding: 0px 16px;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Gotham HTF";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.log-terms li a:hover:not(.active) {
+  color: #fff;
+  font-family: "Gotham HTF";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.market-detils {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.about-content {
+  display: inline-block;
+  margin-top: 176px;
+  width: 100%;
+}
+
+.contact-us {
+  display: flex;
+  width: 700px;
+  padding: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-left: 333px;
+  margin-top: 132px;
+  margin-right: 333px;
+  margin-bottom: 56px;
+}
+
+.SystemicLogic-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  /* margin-left: 15%; */
+}
+
+@media (min-width: 1300px) {
+  .all-main-content {
+    margin-left: 90px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .create-real-rightss {
+   
+    width: 62%; 
+    margin-top: -37%;
+  }
+
+  .create-real-left {
+    margin-top: -28%;
+  }
+
+  .reliability-para {
+    margin-top: -27%;
+  }
+
+  .on-demand-para {
+    margin-top: -29%;
+  }
+}
+

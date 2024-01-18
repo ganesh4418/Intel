@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="row">
+        <div class="research-container">
+            <div class="col-md-2">
+                <div class="market-position">
+                    <label class="side-nav-label">Top market insights</label>
+                    <div class="side-nav-scroll-trending scrollbar-1" id="style-1">
+                        <div class="trending-lists force-overflow">
+                            <div class="listof-history">
+                                <ul *ngFor="let userMktHistory of marketInsightsHistoryData"
+                                    style="padding-left: 0rem !important;">
+                                    <p>{{userMktHistory.day}}:</p>
+                                    <hr>
+                                    <li *ngFor="let historyList of userMktHistory.history">
+                                        <a href="{{historyList.url}}" (click)="redirectUrl($event, historyList.url)">
+                                            <!-- {{historyList.title |slice:0:35}} -->
+                                            {{historyList.title}}
+                                        </a>
+                                    </li><br>
+                                    <button class="border-button"></button>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div style=" margin-left: 2rem;">
+                    <div class="side-nav-scroll force-overflow scrollbar-1" target="_blank" id="style-1">
+                        <div class="tending-top">
+                            <div class="row">
+                                <div class="col-md-5 market-resonse-list" *ngFor="let mktIns of marketInsightData">
+                                    <a class="trendingAnchers" href="{{mktIns.url}}"
+                                        (click)="redirectUrl($event, mktIns.url)">{{mktIns.title}}</a>
+                                    <div class="Trending-content trending-p">
+
+                                        <img style="width: 200px;height: 87px;
+                                            border-radius: 4px;" *ngIf="mktIns.image_url" src="{{mktIns.image_url}}"
+                                            alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="market-history ">
+                    <label class="side-nav-label">Trending headlines</label>
+                    <!-- <div class="side-nav-scroll-trending" id="style-1" style="margin-left: -2rem;">
+                        <div class="trending-list force-overflow" target="_blank">
+                            <div>
+                                <ul class="trending-heading-scroll">
+                                    <li *ngFor="let headline of trendingHeadlineList" style="margin-top: 1rem;">
+                                        <div class="Trending-content trending-p tile-pointer"></div>
+                                        <a class="trendingAncher" (click)="redirectUrl(headline.url)">{{headline.title |
+                                            slice:0:20}}</a>
+                                        <img *ngIf="headline.image_url" class="trending-video"
+                                            src="{{headline.image_url}}" alt="">
+                                        <button class="border-button" style="width: 126%;"></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="side-nav-scroll-trending scrollbar-1" id="style-1" style="margin-left: -2rem;">
+                        <div class="trending-list force-overflow" target="_blank">
+                            <div>
+                                <ul class="trending-heading-scroll">
+                                    <li *ngFor="let headline of trendingHeadlineList" style="margin-top: 1rem;">
+                                        <div class="Trending-content trending-p tile-pointer"></div>
+                                        <a class="trendingAncher" href="{{headline.url}}" title="{{headline.title}}"
+                                            (click)="redirectUrl($event, headline.url)">{{headline.title |
+                                            slice:0:20}}...</a>
+                                        <img *ngIf="headline.image_url" class="trending-video"
+                                            src="{{headline.image_url}}" alt="">
+                                        <button class="border-button"></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

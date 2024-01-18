@@ -1,0 +1,87 @@
+<!-- <app-header></app-header> -->
+<div class="container">
+    <div class="row">
+        <div class="col-12 main-content">
+            <div *ngIf="!loginClicked">
+                <p class="home-midle-content">
+                    <span> A </span> <span>Pioneering </span> <span>AI-driven</span> <span> platform</span> <br>
+                    <span class="designed-home"> designed to automate </span> <br>
+                    <span> high</span> <span> intensity </span> <span> market </span> <span> scanning</span>
+                </p>
+                <div class="home-log-bottom">
+                         <button class="login-btn" (click)="login()"
+                                [ngClass]="loginClicked ? 'display-login' : 'hide-login'">Login</button>
+                                <div class="button-nav-left">
+                        <button class="button-request" routerLink="/request-demo">Request a Demo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="login-content">
+                <div class="middle-content" *ngIf="loginClicked">
+                    <div class="middle-content-m">
+                        <p class="headers-p"><span id="headers"> Log in</span> <br>
+                            Fill the below details, to log in into your account.</p>
+                        <div class="log-content">
+                            <form [formGroup]="form">
+                                <div class="input_pad">
+                                    <label for="name">Email</label><br>
+                                    <input type="text" id="username" class="input" placeholder="Enter your Mail ID"
+                                        formControlName="username"
+                                        required autocomplete="false">
+                                    <div *ngIf="f.username.errors">
+                                        <div class="alert  alert-danger"
+                                            *ngIf="f.username.touched && f.username.errors?.['required']">
+                                            Email
+                                            is required</div>
+                                        <div class="alert  alert-danger"
+                                            *ngIf="f.username.touched && f.username.errors?.['email']">
+                                            Email
+                                            should have correct format</div>
+                                    </div>
+                                </div>
+                                <div class="input_pad">
+                                    <label for="password">Password</label><br>
+                                    <input type="{{ showPassword ? 'text' : 'password' }}" id="password"
+                                        placeholder="Enter your Password" formControlName="password"
+                                        class="input p_icon"
+                                        required autocomplete="false">
+                                    <img *ngIf="!showPassword" src="assets/images/eye-close.png" alt=""
+                                        id="show-password" (click)="togglePasswordVisibility()" class="eye-close">
+                                    <img *ngIf="showPassword" src="assets/images/Vector.png" alt="" id="show-password"
+                                        (click)="togglePasswordVisibility()" class="eye-open" >
+                                    <div *ngIf="f.password.errors">
+                                        <div class="alert  alert-danger"
+                                            *ngIf="f.password.touched && f.password.errors?.['required']">Password is
+                                            required.</div>
+                                        <div class="alert  alert-danger"
+                                            *ngIf="f.password.errors && f.password.errors?.['pattern']">
+                                            Password should contain minimum 8
+                                            and maximum 16 characters, one uppercase, one special character and one
+                                            number
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="javascript:void(0)" class="forgot-pas ms-auto"
+                                    (click)="forgotPassword()">Forgot password?</a>
+                                <div class="remember-me-div">
+                                    <input type="checkbox" id="rememberMe">
+                                    <label for="rememberMe" class="remember-me">Remember me</label>
+                                </div>
+                                <button type="button" [disabled]="form.invalid" class="enterbtn"
+                                    (click)="userLogin()">Log in</button>
+                                <div class="row footer">
+                                    <div class="col-12">
+                                        <a class="active" href="#home">Terms & conditions</a>
+                                        <a class="active help-footer" routerLink="/helpSupport">Help & support</a>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
